@@ -2,6 +2,10 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Reference, ReferenceItem, ReferenceItemProps } from '../components'
 
+import image1URL from '../../images/m51-apod.jpg'
+import image2URL from '../../images/galaxy-merger.jpg'
+import image3URL from '../../images/blackhole.png'
+
 interface APODAssignmentProps {
     href: string
     page: 'content' | 'references'
@@ -60,7 +64,7 @@ const Article: React.FC<ArticleProps> = ({ href }) => (
         </h1>
         <span className='text-sm text-gray-700'>by Matthew Hiebl (z5362740) | 14 April 2023</span>
 
-        <img src='/m51-apod.jpg' alt='Messier 51 Galaxy' className='mt-2 w-full' />
+        <img src={image1URL} alt='Messier 51 Galaxy' className='mt-2 w-full' />
         <span className='text-sm text-gray-700'>
             Messer 51: The Whirlpool Galaxy <Reference link={href + '#1'}>(NASA APOD, 2015)</Reference>
         </span>
@@ -98,22 +102,23 @@ const Article: React.FC<ArticleProps> = ({ href }) => (
         <p className='mb-3 text-justify'>
             First, the protogalactic clouds must collapse under the force of gravity, causing the gas and dust within
             them to become more densely packed. This can trigger the formation of stars, which produce energy and
-            radiation that can ionise and heat the surrounding gas (PHYS1160 Lesson 4, 2022). As the protogalactic
-            clouds continue to collapse and form stars, they begin to merge with other clouds and smaller structures in
-            their vicinity (May A. 2022). This process can be slow and gradual, or it can be more rapid if the clouds
-            are located in a particularly dense region of the universe.
+            radiation that can ionise and heat the surrounding gas{' '}
+            <Reference link={href + '#3'}>(PHYS1160 Lesson 4, 2022)</Reference>. As the protogalactic clouds continue to
+            collapse and form stars, they begin to merge with other clouds and smaller structures in their vicinity (May
+            A. 2022). This process can be slow and gradual, or it can be more rapid if the clouds are located in a
+            particularly dense region of the universe.
         </p>
         <p className='mb-3 text-justify'>
-            Over time, these mergers lead to the formation of larger and more massive structures (May A. 2022),
-            eventually giving rise to the galaxies that we observe today. The exact way in which galaxies form from
-            protogalactic clouds can vary depending on factors such as the mass and composition of the clouds, the
-            environment in which they are located, and the interplay between gravity, gas dynamics, and other physical
-            processes.
+            Over time, these mergers lead to the formation of larger and more massive structures{' '}
+            <Reference link={href + '#4'}>(May A. 2022)</Reference>, eventually giving rise to the galaxies that we
+            observe today. The exact way in which galaxies form from protogalactic clouds can vary depending on factors
+            such as the mass and composition of the clouds, the environment in which they are located, and the interplay
+            between gravity, gas dynamics, and other physical processes.
         </p>
         <p className='mb-3 text-justify'>
             These conditions are what likely give galaxies their unique aspects. Protogalactic clouds that have a high
             rotation around their centre of mass tend to give rise to spiral galaxies, and those that are more static
-            likely form elliptical galaxies (PHYS1160 Lesson 4, 2022).
+            likely form elliptical galaxies <Reference link={href + '#3'}>(PHYS1160 Lesson 4, 2022)</Reference>.
         </p>
 
         <h2 className='mb-2 mt-8 text-2xl font-semibold'>Interacting Galaxies</h2>
@@ -129,13 +134,15 @@ const Article: React.FC<ArticleProps> = ({ href }) => (
             the gravitational attraction between them. This can cause the formation of tidal tails, which are long
             streams of stars and gas that are pulled out of the galaxy and into space. Gravitational interactions occur
             when the gravity of one galaxy affects the motion of another, causing it to change direction or speed
-            (Williams M., 2016). Mergers on the other hand happen when two or more galaxies become so close that the
-            attraction of gravity between them causes them to combine and often forms larger galaxies.
+            <Reference link={href + '#5'}>(Anderson J. et al, 2009)</Reference>. Mergers on the other hand happen when
+            two or more galaxies become so close that the attraction of gravity between them causes them to combine and
+            often forms larger galaxies.
         </p>
         <p className='mb-3 text-justify'>
             Galaxy interactions can have a significant impact on the evolution of galaxies. Tidal forces, for example,
             can trigger the formation of new stars by compressing gas and dust in the galaxy. This can lead to an
-            increase in the rate of star formation (Ekta A. Shah, et. al. 2022), which can produce large numbers of
+            increase in the rate of star formation{' '}
+            <Reference link={href + '#6'}>(Ekta A. Shah, et. al. 2022)</Reference>, which can produce large numbers of
             young, hot stars that emit intense ultraviolet radiation. This radiation can ionise the surrounding gas and
             trigger further star formation, leading to a self-perpetuating cycle of star formation that can last for
             millions of years.
@@ -145,7 +152,7 @@ const Article: React.FC<ArticleProps> = ({ href }) => (
             composition. As two galaxies approach each other, their gravitational fields can distort each other's shape,
             causing them to become elongated or even spiral-shaped. This can change the distribution of stars and gas
             within the galaxy, altering the overall appearance of the galaxy and potentially leading to the formation of
-            new structures such as bars or rings (Williams M., 2016).
+            new structures such as bars or rings <Reference link={href + '#5'}>(Anderson J. et al, 2009)</Reference>.
         </p>
         <p className='mb-3 text-justify'>
             If we look back at the Messier 51 galaxy, we can see these effects occurring as a result of the interaction
@@ -155,27 +162,29 @@ const Article: React.FC<ArticleProps> = ({ href }) => (
         </p>
 
         <h2 className='mb-2 mt-8 text-2xl font-semibold'>Mergers and Collisions</h2>
-        <img src='/galaxy-merger.jpg' alt='Messier 51 Galaxy' className='mt-2 w-full' />
+        <img src={image2URL} alt='Merging Galaxies' className='mt-2 w-full' />
         <span className='text-sm text-gray-700'>
-            Stephan's Quintet Collision - shows the breakdown and reformation of the colliding galaxies (Anderson J. et
-            al, 2009)
+            Stephan's Quintet Collision - shows the breakdown and reformation of the colliding galaxies{' '}
+            <Reference link={href + '#7'}>(Anderson J. et al, 2009)</Reference>
         </span>
         <div className='h-6' />
         <p className='mb-3 text-justify'>
             Mergers can have the most dramatic effect on the evolution of galaxies. When two galaxies merge, the gas and
             dust within them can become highly compressed, triggering a burst of star formation that can produce
-            millions of new stars in a relatively short period of time (Ekta A. Shah, et. al. 2022). The merging process
-            can also trigger the formation of a supermassive black hole at the centre of the newly formed galaxy, which
-            can grow rapidly as it consumes surrounding gas and dust. The merger can also disrupt the orbits of stars
-            within the galaxies, causing them to be scattered throughout the new galaxy.
+            millions of new stars in a relatively short period of time{' '}
+            <Reference link={href + '#6'}>(Ekta A. Shah, et. al. 2022)</Reference>. The merging process can also trigger
+            the formation of a supermassive black hole at the centre of the newly formed galaxy, which can grow rapidly
+            as it consumes surrounding gas and dust. The merger can also disrupt the orbits of stars within the
+            galaxies, causing them to be scattered throughout the new galaxy.
         </p>
         <p className='mb-3 text-justify'>
             On the other hand, when these mergers happen faster and at a more direct angle, the effect on their
             evolution can be even more pronounced. Collisions can cause large amounts of gas and dust to be ejected from
             the galaxies, leading to a decrease in star formation rates. However, collisions can also trigger star
-            formation by compressing gas and dust within the galaxies (Ekta A. Shah, et. al. 2022). In addition,
-            collisions can cause the formation of new structures such as tidal tails or bridges, which can be visible
-            for millions of years after the collision has occurred.
+            formation by compressing gas and dust within the galaxies{' '}
+            <Reference link={href + '#6'}>(Ekta A. Shah, et. al. 2022)</Reference>. In addition, collisions can cause
+            the formation of new structures such as tidal tails or bridges, which can be visible for millions of years
+            after the collision has occurred.
         </p>
 
         <h2 className='mb-2 mt-8 text-2xl font-semibold'>Scientific Importance</h2>
@@ -190,31 +199,32 @@ const Article: React.FC<ArticleProps> = ({ href }) => (
             Learning what happens as galaxies collide gives scientists insights into how many of the galaxies we see
             today have evolved and formed as a result of mergers and collisions. As habitants of the Milky Way galaxy,
             it is also useful to know what will happen when our home galaxy eventually collides with the Andromeda
-            galaxy in roughly 4.5 billion years (Wood A. 2023).
+            galaxy in roughly 4.5 billion years <Reference link={href + '#8'}>(Wood A. 2023)</Reference>.
         </p>
         <p className='mb-3 text-justify'>
             As for the study of black holes, there is much to learn. It provides a way to test General Relativity in
             extreme conditions. By observing the gravitational waves emitted during a black hole collision, scientists
-            can study the properties of black holes and confirm that they behave as predicted by General Relativity
-            (NASA 2022). Collisions also provide a unique opportunity to understand the origin and evolution of these
-            supermassive objects. By studying the mass and spin of the black holes involved in a collision, scientists
-            can learn about their formation and evolution. This can help shed light on how black holes are formed and
-            how they grow over time. Lastly, studying black hole collisions further allows us to explore the universe
-            and learn about its history and evolution. Black hole collisions occur in distant galaxies, and observing
-            the gravitational waves from these collisions can provide valuable information about the structure and
-            properties of the universe itself.
+            can study the properties of black holes and confirm that they behave as predicted by General Relativity{' '}
+            <Reference link={href + '#11'}>(NASA 2022)</Reference>. Collisions also provide a unique opportunity to
+            understand the origin and evolution of these supermassive objects. By studying the mass and spin of the
+            black holes involved in a collision, scientists can learn about their formation and evolution. This can help
+            shed light on how black holes are formed and how they grow over time. Lastly, studying black hole collisions
+            further allows us to explore the universe and learn about its history and evolution. Black hole collisions
+            occur in distant galaxies, and observing the gravitational waves from these collisions can provide valuable
+            information about the structure and properties of the universe itself.
         </p>
         <p className='mb-3 text-justify'>
             <span className='text-gray-700 underline'>Recent Result:</span> Scientists have recently used the Atacama
             Large Millimetre/Submillimetre Array (ALMA) observatory to discover the closest pair of black holes to Earth
-            that are on the edge of merging (Wood A. 2023). This discovery will greatly benefit the ability to find and
-            detect even more supermassive black holes around the universe. Through studying the gravitational waves that
-            this pair of black holes emit, the scientists have been able to begin estimating the number of black holes
-            that may be present at the centre of galaxies that we may not have detected before (Koss M., et. al. 2023).
-            These estimations have turned out to suggest that there are many black holes that may not have been
-            identified already and that the number is larger than previously thought. This discovery and research
-            related to it gives a large insight into the way that black holes form and advance our ability to search the
-            universe through gravitational waves (Koss M., et. al. 2023).
+            that are on the edge of merging <Reference link={href + '#8'}>(Wood A. 2023)</Reference>. This discovery
+            will greatly benefit the ability to find and detect even more supermassive black holes around the universe.
+            Through studying the gravitational waves that this pair of black holes emit, the scientists have been able
+            to begin estimating the number of black holes that may be present at the centre of galaxies that we may not
+            have detected before <Reference link={href + '#9'}>(Koss M., et. al. 2023)</Reference>. These estimations
+            have turned out to suggest that there are many black holes that may not have been identified already and
+            that the number is larger than previously thought. This discovery and research related to it gives a large
+            insight into the way that black holes form and advance our ability to search the universe through
+            gravitational waves <Reference link={href + '#9'}>(Koss M., et. al. 2023)</Reference>.
         </p>
 
         <h2 className='mb-2 mt-8 text-2xl font-semibold'>How can we get a closer look?</h2>
@@ -233,19 +243,20 @@ const Article: React.FC<ArticleProps> = ({ href }) => (
             rather than bright, pinpoint sources of light like stars. The best time to see galaxies is during a new moon
             when the sky is darkest.
         </p>
-        <img src='/blackhole.png' alt='Messier 51 Galaxy' className='mt-4 w-full' />
+        <img src={image3URL} alt='Blackhole Image' className='mt-4 w-full' />
         <span className='text-sm text-gray-700'>
-            Hot gas swirling around the event horizon of a black hole (NASA 2019)
+            Hot gas swirling around the event horizon of a black hole{' '}
+            <Reference link={href + '#10'}>(NASA 2019)</Reference>
         </span>
         <div className='h-6' />
         <p className='mb-3 text-justify'>
             As for observing black holes, this is much more difficult. Firstly, a black hole is near impossible to see,
             since its gravity is so strong, not even light can escape it. However, some light and gas can be caught near
             the event horizon that remain visible. The blurry image above comes from the black hole of Messier 87, some
-            55 million light years away (NASA 2019). Capturing this image was no easy feat, as telescopes and
-            observatories are far too small to capture the amount of light necessary to see the glow around a black
-            hole. However, scientists were able to use observatories across the globe in synchronisation, effectively
-            simulating a telescope the size of the Earth (Lutz O. 2019).
+            55 million light years away <Reference link={href + '#10'}>(NASA 2019)</Reference>. Capturing this image was
+            no easy feat, as telescopes and observatories are far too small to capture the amount of light necessary to
+            see the glow around a black hole. However, scientists were able to use observatories across the globe in
+            synchronisation, effectively simulating a telescope the size of the Earth (Lutz O. 2019).
         </p>
     </article>
 )
@@ -280,13 +291,6 @@ const references: ReferenceItemProps[] = [
         href: 'https://www.space.com/how-galaxies-form',
     },
     {
-        author: 'Anderson J., Watzke M. 2009',
-        title: 'A Galaxy Collision in Action',
-        sponsor: 'NASA',
-        accessed: '12 April 2023',
-        href: 'https://www.nasa.gov/mission_pages/chandra/multimedia/photo09-049.html',
-    },
-    {
         author: 'Williams M. (Universe Today) 2016',
         title: 'What happens when galaxies collide?',
         sponsor: 'Phys.org',
@@ -299,6 +303,13 @@ const references: ReferenceItemProps[] = [
         sponsor: 'arxiv.org',
         accessed: '12 April 2023',
         href: 'https://arxiv.org/abs/2209.15587#:~:text=Abstract%3A%20Observations%20and%20simulations%20of,Active%20Galactic%20Nuclei%20(AGN)',
+    },
+    {
+        author: 'Anderson J., Watzke M. 2009',
+        title: 'A Galaxy Collision in Action',
+        sponsor: 'NASA',
+        accessed: '12 April 2023',
+        href: 'https://www.nasa.gov/mission_pages/chandra/multimedia/photo09-049.html',
     },
     {
         author: 'Wood A. 2023',
