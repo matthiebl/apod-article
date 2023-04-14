@@ -73,9 +73,7 @@ const Article: React.FC<ArticleProps> = ({ href }) => (
         </h1>
         <span className='text-sm text-gray-700'>by Matthew Hiebl (z5362740) | 14 April 2023</span>
 
-        <a href='images/m51-apod.jpg' target='_blank'>
-            <img src={image1URL} alt='Messier 51 Galaxy' className='mt-2 w-full' />
-        </a>
+        <img src={image1URL} alt='Messier 51 Galaxy' className='mt-2 w-full' />
         <span className='text-sm text-gray-700'>
             Messer 51: The Whirlpool Galaxy <Reference link={href + '#1'}>(NASA APOD, 2015)</Reference>
         </span>
@@ -173,9 +171,7 @@ const Article: React.FC<ArticleProps> = ({ href }) => (
         </p>
 
         <h2 className='mb-2 mt-8 text-2xl font-semibold'>Mergers and Collisions</h2>
-        <a href='/images/galaxy-merger.jpg' target='_blank'>
-            <img src={image2URL} alt='Merging Galaxies' className='mt-2 w-full' />
-        </a>
+        <img src={image2URL} alt='Merging Galaxies' className='mt-2 w-full' />
         <span className='text-sm text-gray-700'>
             Stephan's Quintet Collision - shows the breakdown and reformation of the colliding galaxies{' '}
             <Reference link={href + '#7'}>(Anderson J. et al, 2009)</Reference>
@@ -256,9 +252,7 @@ const Article: React.FC<ArticleProps> = ({ href }) => (
             rather than bright, pinpoint sources of light like stars. The best time to see galaxies is during a new moon
             when the sky is darkest.
         </p>
-        <a href='/images/blackhole.png' target='_blank'>
-            <img src={image3URL} alt='Blackhole Image' className='mt-4 w-full' />
-        </a>
+        <img src={image3URL} alt='Blackhole Image' className='mt-4 w-full' />
         <span className='text-sm text-gray-700'>
             Hot gas swirling around the event horizon of a black hole{' '}
             <Reference link={href + '#10'}>(NASA 2019)</Reference>
