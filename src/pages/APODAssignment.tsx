@@ -27,7 +27,16 @@ export const APODAssignment: React.FC<APODAssignmentProps> = ({ href, page }) =>
         <main className='flex h-full w-screen justify-center'>
             <div className='w-full max-w-4xl'>
                 <nav className='sticky top-0 flex h-16 items-center justify-between border-b border-slate-900/10 bg-white pl-8 pr-6 font-semibold opacity-95'>
-                    <h3 className='text-xl'>APOD Assignment</h3>
+                    <a
+                        href='/galaxy-collisions'
+                        onClick={ev => {
+                            ev.preventDefault()
+                            navigate('/galaxy-collisions')
+                        }}
+                        className='truncate text-xl'
+                    >
+                        APOD Assignment
+                    </a>
                     <div>
                         {navLinks.map(link => (
                             <a
@@ -37,14 +46,14 @@ export const APODAssignment: React.FC<APODAssignmentProps> = ({ href, page }) =>
                                     ev.preventDefault()
                                     navigate(link.href)
                                 }}
-                                className='ml-8 p-2'
+                                className='ml-3 p-2 md:ml-8'
                             >
                                 {link.text}
                             </a>
                         ))}
                     </div>
                 </nav>
-                <div className='px-8'>
+                <div className='px-8 pb-16'>
                     {page === 'content' && <Article href={href + '/references'} />}
                     {page === 'references' && <References />}
                 </div>
@@ -58,7 +67,7 @@ interface ArticleProps {
 }
 
 const Article: React.FC<ArticleProps> = ({ href }) => (
-    <article className='pb-16'>
+    <article>
         <h1 id='introduction' className='mt-8 text-4xl font-semibold'>
             Galaxies - Formation and Collisions
         </h1>
@@ -256,7 +265,8 @@ const Article: React.FC<ArticleProps> = ({ href }) => (
             55 million light years away <Reference link={href + '#10'}>(NASA 2019)</Reference>. Capturing this image was
             no easy feat, as telescopes and observatories are far too small to capture the amount of light necessary to
             see the glow around a black hole. However, scientists were able to use observatories across the globe in
-            synchronisation, effectively simulating a telescope the size of the Earth (Lutz O. 2019).
+            synchronisation, effectively simulating a telescope the size of the Earth{' '}
+            <Reference link={href + '#12'}>(Lutz O. 2019)</Reference>.
         </p>
     </article>
 )
@@ -359,8 +369,8 @@ const References = () => {
             <h1 className='mt-8 text-4xl font-semibold'>References</h1>
             {references.map((ref, index) => (
                 <ReferenceItem
-                    key={'ref ' + index}
-                    id={index}
+                    key={'ref ' + (index + 1)}
+                    id={index + 1}
                     selected={window.location.hash.slice(1)}
                     author={ref.author}
                     title={ref.title}
